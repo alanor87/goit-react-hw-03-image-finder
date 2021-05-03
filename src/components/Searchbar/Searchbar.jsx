@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 class Searchbar extends React.Component {
   state = {
-    query: '',
+    query: "",
   };
 
   onInputChange = (event) => {
@@ -11,9 +12,9 @@ class Searchbar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if(this.state.query) this.props.onSubmit(this.state.query);
-    this.setState({ query: '' });
-  }
+    if (this.state.query) this.props.onSubmit(this.state.query);
+    this.setState({ query: "" });
+  };
 
   render() {
     return (
@@ -38,4 +39,7 @@ class Searchbar extends React.Component {
   }
 }
 
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 export default Searchbar;

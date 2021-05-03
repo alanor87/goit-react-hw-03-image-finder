@@ -1,5 +1,6 @@
 import React from "react";
 import ImageGalleryItem from "../ImageGalleryItem";
+import PropTypes from "prop-types";
 
 class ImageGallery extends React.Component {
   render() {
@@ -23,4 +24,8 @@ class ImageGallery extends React.Component {
   }
 }
 
+ImageGallery.propTypes = {
+  images: PropTypes.array.isRequired,
+  onThumbClick: PropTypes.func.isRequired,
+};
 export default ImageGallery;
